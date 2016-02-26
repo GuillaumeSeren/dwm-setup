@@ -1,3 +1,4 @@
+Author: Guillaume Seren <guillaumeseren AT gmail.com>
 Author: Jan Christoph Ebersbach jceb@e-jc.de
 Author: Eon S. Jeon esjeon@hyunmu.am (14343e69cc59)
 Author: David Phillips (5ed9c48 (6.1), and 20160103)
@@ -473,16 +474,17 @@ index 0362114..e574573 100644
  	/* init cursors */
  	cursor[CurNormal] = drw_cur_create(drw, XC_left_ptr);
  	cursor[CurResize] = drw_cur_create(drw, XC_sizing);
-@@ -1586,6 +1763,8 @@ setup(void)
- 	scheme[SchemeSel].border = drw_clr_create(drw, selbordercolor);
- 	scheme[SchemeSel].bg = drw_clr_create(drw, selbgcolor);
- 	scheme[SchemeSel].fg = drw_clr_create(drw, selfgcolor);
+@@ -1625,7 +1802,8 @@ setup(void)
+ 		scheme[i].fg = drw_clr_create(drw, colors[i][1]);
+ 		scheme[i].bg = drw_clr_create(drw, colors[i][2]);
+ 	}
+-
 +	/* init system tray */
 +	updatesystray();
  	/* init bars */
  	updatebars();
  	updatestatus();
-@@ -1645,6 +1824,22 @@ spawn(const Arg *arg)
+@@ -1685,6 +1863,22 @@ spawn(const Arg *arg)
  	}
  }
  
